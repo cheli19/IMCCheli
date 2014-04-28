@@ -1,0 +1,101 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>calcular</title>
+<link href="jquery.mobile-1.0.min.css" rel="stylesheet" type="text/css"/>
+<script src="jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="jquery.mobile-1.0.min.js" type="text/javascript"></script>
+<script languje="javaScript">
+var peso=0;
+var estatura=0;
+var imc=0;
+
+function sumatorias(){
+ peso=document.getElementById("txtNombre").value;
+ peso=parseFloat(peso);
+ estatura=document.getElementById("txtEdad").value;
+ estatura=parseFloat(estatura);  
+ imc=peso/(estatura*estatura);
+ if (imc<18) {
+    document.getElementById("txtResul").value=imc;
+  alert("necesario valorar signos de desnutricion");
+ }
+
+ else if ((imc>18)&&(imc<25)) {
+     document.getElementById("txtResul").value=imc;
+  alert("normal");
+
+
+
+
+
+}
+
+else if ((imc>25)&&(imc<27)) {
+     document.getElementById("txtResul").value=imc;
+  alert("sobrepeso");
+
+  }
+  else if ((imc>27)&&(imc<29.9)) {
+     document.getElementById("txtResul").value=imc;
+  alert("obesidad grado 1. riesgos relativo alto para enfermedades cardiovasculares");
+
+  }
+  else if ((imc>30)&&(imc<39.9)) {
+     document.getElementById("txtResul").value=imc;
+  alert("obesidad grado 2.riesgos relativo muy alto para el desarrollo de enfermedades cardiovasculares");
+
+  }
+  
+  
+  else{
+     document.getElementById("txtResul").value=imc;
+    alert("obesidad grado 3 extrema o morbida.riesgo relativo extremadamente alto para el desarrollo de enfermedades cardiovasculares");
+
+  }
+
+}
+
+</script>
+
+</head> 
+<body> 
+
+<div data-role="page" id="page">
+	<div data-role="header">
+		<h1>CALCULAR IMC</h1>
+	</div>
+    <table width="0" border="0">
+  <tr>
+    <td>Peso(kg)</td>
+    <td>
+     
+      <input type="text" name="txtNombre" id="txtNombre" value=""  />
+    </td>
+  </tr>
+  <tr>
+    <td>Estatura(mts)</td>
+    
+    <td>
+     
+      <input type="text" name="txtEdad" id="txtEdad" value=""  />
+    </td>
+  </tr>
+  <tr>
+    <td><button onclick="sumatorias()">IMC</button></td>
+    <td>
+     
+      <input type="text" name="txtResul" id="txtResul" value=""  />
+    </td>
+  </tr>
+</table>
+
+	
+	<div data-role="footer">
+		<h4>Autor:Araceli Rivas Cruz</h4>
+	</div>
+</div>
+
+</body>
+</html>
